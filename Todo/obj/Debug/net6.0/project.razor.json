@@ -16318,6 +16318,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/brandon/code/learning/C#/MVC-Projects/ToDo-List/Todo/Views/Shared/_Form.cshtml",
+      "TargetPath": "Views\\Shared\\_Form.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/brandon/code/learning/C#/MVC-Projects/ToDo-List/Todo/Views/Shared/_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
