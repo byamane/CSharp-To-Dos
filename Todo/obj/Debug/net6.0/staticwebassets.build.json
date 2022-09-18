@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "80/hMvbOtzlK9Nt8DcF1oZj6UYDh6XifbtO7/ax5TcM=",
+  "Hash": "7Xm9FuOX2mJfF7JQBN8XVbUkif72qfaAxaL3DmyyzPg=",
   "Source": "Todo",
   "BasePath": "_content/Todo",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/css/site.css"
+    },
+    {
+      "Identity": "/home/brandon/code/learning/C#/MVC-Projects/ToDo-List/Todo/wwwroot/db.sqlite",
+      "SourceId": "Todo",
+      "SourceType": "Discovered",
+      "ContentRoot": "/home/brandon/code/learning/C#/MVC-Projects/ToDo-List/Todo/wwwroot/",
+      "BasePath": "_content/Todo",
+      "RelativePath": "db.sqlite",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/db.sqlite"
     },
     {
       "Identity": "/home/brandon/code/learning/C#/MVC-Projects/ToDo-List/Todo/wwwroot/favicon.ico",
