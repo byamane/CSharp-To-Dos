@@ -25,6 +25,45 @@ namespace Todo.Controllers
             return View();
         }
 
+        internal TodoViewModel GetAllTodos()
+        {
+            List<TodoItem> todoList = new();
+
+            using (SqliteConnection con =
+                new SqliteConnection("Data Source=db.sqlite"))
+            {
+                using (var tableCmd = con.CreateCommand())
+                {
+                    con.Open();
+                    tableCmd.CommandText = "SELECT * FROM todo";
+
+                    using (var reader = tableCmd.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            while (reader.Read())
+                            {
+                                todoList.Add(
+                                    new TodoItem
+                                    {
+                                        Id = reader.GetInt32(0),
+                                        Name = reader.GetString(1)
+                                    });
+                            }
+                        }
+                        else
+                        {
+                            return new TodoViewModel
+                            {
+                                TodoList = todoList
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+
         public RedirectResult Insert(TodoItem todo)
         {
             using (SqliteConnection con =
