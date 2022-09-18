@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.Sqlite;
 using Microsoft.Extensions.Logging;
 using Todo.Models;
-// using Todo.Models.ViewModels;
+using Todo.Models.ViewModels;
 
 namespace Todo.Controllers
 {
@@ -22,7 +22,8 @@ namespace Todo.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var todoListViewModel = GetAllTodos();
+            return View(todoListViewModel);
         }
 
         internal TodoViewModel GetAllTodos()
@@ -30,7 +31,7 @@ namespace Todo.Controllers
             List<TodoItem> todoList = new();
 
             using (SqliteConnection con =
-                new SqliteConnection("Data Source=db.sqlite"))
+                   new SqliteConnection("Data Source=db.sqlite"))
             {
                 using (var tableCmd = con.CreateCommand())
                 {
@@ -56,12 +57,16 @@ namespace Todo.Controllers
                             return new TodoViewModel
                             {
                                 TodoList = todoList
-                            }
+                            };
                         }
-
-                    }
+                    };
                 }
             }
+
+            return new TodoViewModel
+            {
+                TodoList = todoList
+            };
         }
 
         public RedirectResult Insert(TodoItem todo)
